@@ -167,6 +167,11 @@ public class CrawlParser {
             int totalWordCount = book.getWordCount() == null ? 0 : book.getWordCount();
 
             while (isFindIndex) {
+                try {
+                    Thread.sleep(new Random().nextInt(200));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 BookIndex hasIndex = existBookIndexMap.get(indexNum);
                 String indexName = indexNameMatch.group(1);
